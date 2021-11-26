@@ -1,6 +1,9 @@
 package ru.netology.web;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,5 +50,20 @@ public class CallbackTest {
         assertEquals(actualText, expectedText, "Текст сообщения не совпадает");
     }
 
-
+    @Test
+    public void shouldReturnForm2() {
+        driver.get("http://localhost:9999");
+        System.out.println("");
+        driver.findElement(By.cssSelector("[type='text']")).sendKeys("Арнольд Смирнов");
+        driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+75214444789");
+//        List<WebElement> textFields = driver.findElements(By.className("input__control"));
+//        textFields.get(0).sendKeys("Васильев Василий");
+//        textFields.get(1).sendKeys("+75145684789");
+        driver.findElement(By.cssSelector(".checkbox__box")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String actualText = driver.findElement(By.cssSelector(".App_appContainer__3jRx1")).getText();
+        String expectedText = "Заявка на дебетовую карту\n" +
+                "  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        assertEquals(actualText, expectedText, "Текст сообщения не совпадает");
+    }
 }
