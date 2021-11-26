@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,10 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CallbackTest {
     private WebDriver driver;
 
-    @BeforeAll
-    public static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
-    }
+//    @BeforeAll
+//    public static void setUpAll() {
+//        System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
+//    }
+
 
     @BeforeEach
     public void setUp() {
