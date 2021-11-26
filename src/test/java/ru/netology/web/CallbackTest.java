@@ -1,9 +1,6 @@
 package ru.netology.web;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,10 +39,11 @@ public class CallbackTest {
         List<WebElement> textFields = driver.findElements(By.className("input__control"));
         textFields.get(0).sendKeys("Васильев Василий");
         textFields.get(1).sendKeys("+75145684789");
-        driver.findElement(By.className("checkbox_box")).click();
+        driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.tagName("button")).click();
-        String actualText = driver.findElement(By.className("alert-success")).getText();
-        String expectedText = "Ваша заявкауспешно отправлена! Наш менеджер свяжится с вами в ближайшее время";
+        String actualText = driver.findElement(By.className("App_appContainer__3jRx1")).getText();
+        String expectedText = "Заявка на дебетовую карту\n" +
+                "  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         assertEquals(actualText, expectedText, "Текст сообщения не совпадает");
     }
 
