@@ -1,1 +1,1 @@
-CI CardOrder[![Build status](https://ci.appveyor.com/api/projects/status/5ye8s4p7e4ce19iq?svg=true)](https://ci.appveyor.com/project/PetrIvChe/testingwebinterfacescardorder)
+CI Callback Selenium [![Build status](https://ci.appveyor.com/api/projects/status/i8y4mv8m5isxvdbo?svg=true)](https://ci.appveyor.com/project/PetrIvChe/selenium)
