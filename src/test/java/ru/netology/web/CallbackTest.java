@@ -22,10 +22,10 @@ public class CallbackTest {
         System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
     }
 
-    @BeforeAll
-    static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
+//    //@BeforeAll
+//    //static void setupClass() {
+//        WebDriverManager.chromedriver().setup();
+//    }
 
     @BeforeEach
     public void setUp() {
@@ -42,7 +42,7 @@ public class CallbackTest {
     @Test
     public void shouldReturnForm() {
         driver.get("http://localhost:9999");
-        System.out.println("");
+        //System.out.println("");
 //        driver.findElement().sendKeys("Васильев Василий");
 //        driver.findElement().sendKeys("+75145684789");
         List<WebElement> textFields = driver.findElements(By.className("input__control"));
@@ -59,7 +59,7 @@ public class CallbackTest {
     @Test
     public void shouldReturnForm2() {
         driver.get("http://localhost:9999");
-        System.out.println("");
+        //System.out.println("");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Арнольд Смирнов");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+75214444789");
 //        List<WebElement> textFields = driver.findElements(By.className("input__control"));
